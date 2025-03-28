@@ -31,6 +31,15 @@ CONTROLS:
 - Restart Game: After game over, press R to restart.
 - Exit Game: After game over, press X to exit.
 
+Color Assignments:
+'1' (I shape) → Cyan
+'2' (O shape) → Red
+'3' (T shape) → Green
+'4' (S shape) → Yellow
+'5' (Z shape) → Magenta
+'6' (J shape) → Blue
+'7' (L shape) → Light Cyan
+
 HOW THE GAME WORKS:
 -------------------
 1. *Tetromino Generation*: New Tetrominoes are randomly generated and fall from the top of the screen.
