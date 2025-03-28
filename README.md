@@ -17,17 +17,9 @@ FEATURES:
 
 REQUIREMENTS:
 -------------
-- A Windows operating system (due to the use of Windows-specific libraries like conio.h and windows.h).
+- A Windows operating system (due to the use of Windows-specific libraries like conio.h and windows.h). It can also run on ios and linux by doing some minor changes
 - C++ compiler (e.g., GCC, MSVC).
 - The game uses basic C++ libraries and Windows API for console manipulation.
-
-COMPILATION AND EXECUTION:
----------------------------
-1. Download or clone the repository.
-2. If you're using a terminal with g++ (MinGW for Windows), compile the code with:
-   g++ tetris.cpp -o tetris.exe
-3. If you're using an IDE like Code::Blocks or Visual Studio, simply open the project and compile it.
-4. After compiling, execute the tetris.exe (or equivalent) file to start the game.
 
 CONTROLS:
 ---------
@@ -55,11 +47,3 @@ GAME OVER:
 ----------
 When the game ends, the final score will be displayed along with the highest score achieved in the current session. You can press R to restart or X to exit the game.
 
-TROUBLESHOOTING:
-----------------
-- *Screen flickering*: If you notice any flickering or unusual behavior, make sure your terminal window is large enough to accommodate the game grid.
-- *Windows-only*: This game uses Windows-specific libraries, so it will only work on Windows operating systems.
-
-ACKNOWLEDGEMENTS:
------------------
-This implementation is based on the original concept of Tetris, a game created by Alexey Pajitnov in 1984. The game is presented in a console window using C++ and Windows API for console manipulation.
