@@ -1,3 +1,5 @@
+//Test
+
 #include <iostream>
 #include <vector>
 #include <conio.h>    // For _kbhit(), _getch()
@@ -124,7 +126,14 @@ void printGrid(const Tetromino &currentTetromino) {
 
     cout << "Score: " << score << "    |    High Score: " << highScore << "\n";
 }
-//                              GAME LOGIC
+
+// Calculate fall speed based on score
+int calculateFallSpeed() {
+    int baseSpeed = 500; // Base fall speed in milliseconds
+    int speedIncrease = score / 500; // Increase speed after every 500 points
+    int newSpeed = baseSpeed - (speedIncrease * 50); // Reduce by 50ms each level
+    return max(newSpeed, 100); // Minimum fall speed is 100ms
+}
 
 bool canMove(int dx, int dy, const vector<vector<int>> &shape) {
     for (int i = 0; i < shape.size(); i++) {
@@ -233,12 +242,12 @@ int runGameSession() {
         return score;
     }
     DWORD lastFallTime = GetTickCount();
-    int fallSpeed = 500; // Milliseconds per fall step
 
     while (true) {
         printGrid(currentTetromino);
         handleInput();
         DWORD now = GetTickCount();
+        int fallSpeed = calculateFallSpeed(); // Update speed based on score
         if (now - lastFallTime >= fallSpeed) {
             if (canMove(0, 1, currentTetromino.shape))
                 currentTetromino.y++;
@@ -265,7 +274,7 @@ int main() {
         if (finalScore > highScore)
             highScore = finalScore;
         
-        cout << "\nGame Over, "<< "!\n";
+        cout << "\nGame Over!\n";
         cout << "Your Score: " << finalScore << "\n";
         cout << "High Score: " << highScore << "\n\n";
         cout << "Press [R] to Restart or [X] to Exit.\n";
@@ -287,7 +296,7 @@ int main() {
     }
     
     system("cls");
-    cout << "Thanks for playing TETRIS, "<< "!\n";
+    cout << "Thanks for playing TETRIS!\n";
     cout << "Final High Score: " << highScore << "\n";
     system("pause");
     return 0;
